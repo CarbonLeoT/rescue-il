@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ResCue: Residual Spatial Cueing for Language-Conditioned Imitation Learning.">
+  <meta name="keywords" content="robotics, imitation learning, spatial grounding, diffusion policy, robot manipulation">
+  <meta name="author" content="Yanzhe Tang, Xinyu Shao, Yuxuan Hu, Siyu Chen, Chenxi Zhai, Xi Chen, Bowen Yang, Yajun Gao, Tongtong Cao, Xiu Li, Long Zeng">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ResCue: Residual Spatial Cueing for Language-Conditioned Imitation Learning">
+  <meta property="og:description" content="Explicit target grounding for language-conditioned robot imitation learning.">
+  <meta property="og:image" content="static/images/rescue-teaser.png">
+
+  <title>ResCue | Residual Spatial Cueing for Imitation Learning</title>
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="hero__inner">
+      <p class="venue">ICASSP 2027</p>
+      <h1><span>ResCue:</span> Residual Spatial Cueing for Language-Conditioned Imitation Learning</h1>
+
+      <p class="authors">
+        Yanzhe Tang<sup>1,2,&dagger;</sup>, Xinyu Shao<sup>1,2,&dagger;</sup>, Yuxuan Hu<sup>3</sup>,
+        Siyu Chen<sup>1</sup>, Chenxi Zhai<sup>1</sup>, Xi Chen<sup>1</sup>,
+        Bowen Yang<sup>2</sup>, Yajun Gao<sup>2</sup>, Tongtong Cao<sup>2</sup>,
+        Xiu Li<sup>1</sup>, Long Zeng<sup>1,*</sup>
+      </p>
+
+      <div class="affiliations">
+        <p><sup>1</sup>Tsinghua University, Shenzhen International Graduate School</p>
+        <p><sup>2</sup>Huawei Technologies Co., Ltd.</p>
+        <p><sup>3</sup>National University of Singapore</p>
+        <p class="author-note"><sup>&dagger;</sup>Equal contribution &nbsp; <sup>*</sup>Corresponding author</p>
+      </div>
+
+      <nav class="actions" aria-label="Project links">
+        <a class="button" href="#demo">Demo</a>
+        <a class="button button--secondary" href="#method">Method</a>
+      </nav>
+
+      <figure class="hero__visual">
+        <img src="static/images/rescue-teaser.png" alt="Comparison between an end-to-end vision-language-action pipeline and the ResCue target-grounding pipeline">
+      </figure>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--demo" id="demo">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Robot experiments</p>
+          <h2>Demo Video</h2>
+        </div>
+
+        <div class="video-placeholder" role="img" aria-label="Demo video coming soon">
+          <div class="play-mark" aria-hidden="true"></div>
+          <p>Demo video coming soon</p>
+          <span>The full simulation and real-world demonstration will appear here.</span>
+        </div>
+
+        <!--
+          To publish the demo, place an H.264/AAC MP4 at
+          static/videos/rescue-demo.mp4 and replace the placeholder above with:
+
+          <video class="demo-video" controls preload="metadata">
+            <source src="static/videos/rescue-demo.mp4" type="video/mp4">
+            Your browser does not support HTML video.
+          </video>
+        -->
+      </div>
+    </section>
+
+    <section class="section" id="method">
+      <div class="container container--wide">
+        <div class="section-heading">
+          <p class="eyebrow">Approach</p>
+          <h2>Residual Spatial Cueing</h2>
+          <p class="lead">
+            ResCue grounds a language-specified target into an image-space mask,
+            independently encodes that cue, and injects it into spatial RGB features
+            before action generation.
+          </p>
+        </div>
+
+        <figure class="method-figure">
+          <img src="static/images/rescue-overview.png" alt="ResCue language grounding, residual spatial fusion, action generation, and evaluation tasks">
+          <figcaption>
+            The ResCue pipeline and evaluation suite across simulated manipulation
+            and real-world bimanual tasks.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section--abstract" id="abstract">
+      <div class="container container--text">
+        <div class="section-heading">
+          <p class="eyebrow">Paper</p>
+          <h2>Abstract</h2>
+        </div>
+        <p class="abstract-copy">
+          Visual imitation policies must learn which image regions matter for
+          action, whether applying the same operation to different objects or
+          selecting a language-specified target. We introduce <strong>ResCue</strong>
+          (<strong>Res</strong>idual Spatial <strong>Cue</strong>ing), which converts
+          language-derived target information into a spatial condition for visual
+          policy learning. Pretrained grounding produces a target mask; an
+          independent cue encoder adds its features to spatial RGB features before
+          further visual processing and pooling. This retains scene context while
+          making the target explicit. With Diffusion Policy, ResCue achieves 56.5%
+          average success across 15 simulated tasks, versus 33.1% for Diffusion
+          Policy and 41.8% for the pretrained vision-language-action model
+          &pi;<sub>0</sub>. On three real-world bimanual tasks, it reaches 60.0%,
+          compared with 31.7% for &pi;<sub>0</sub>. Matched-mask ablations favor
+          residual fusion over input-level and pooled alternatives, while test-time
+          interventions show that target-correct guidance matters for execution.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>ResCue &middot; Residual Spatial Cueing for Language-Conditioned Imitation Learning</p>
+    <a href="#top">Back to top</a>
+  </footer>
+</body>
+</html>
